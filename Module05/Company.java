@@ -85,7 +85,7 @@ public class Company {
         }
 
     //addition
-    public static void additionEmpoyee(){
+    private static void additionEmpoyee(){
         String name;
         double month;
         double year;
@@ -137,7 +137,7 @@ public class Company {
                 break;
         }
     }
-    public static void additionEmpoyee(String name, int type){
+    private static void additionEmpoyee(String name, int type){
         double month;
         double year;
         double stavka;
@@ -226,12 +226,12 @@ public class Company {
 
     }
     //moving
-    public static void moveEmployee(String nname, int type){
+    private static void moveEmployee(String nname, int type){
         removeEmployee(nname);
         additionEmpoyee(nname, type);
         }
     //change settings
-    public static void chanchingOfParemethers(String nname){
+    private static void chanchingOfParemethers(String nname){
         Scanner in = new Scanner(System.in);
         int a=0;
         int j=0;
@@ -306,7 +306,7 @@ public class Company {
 
     }
     //printing of employees and their parameters
-    public static void printEmployees(){
+    private static void printEmployees(){
         for (HourlyEmployee employee : hourlyEmployees) {
             System.out.println("| name: "+employee.getName()+" || otrabotano in month: "+employee.getOtrabotanoInMonth()+
                     " || otrabotano in year: "+employee.getOtrabotanoInYear()+" || stavka: "+employee.getStavka()+" |");
@@ -324,7 +324,7 @@ public class Company {
         }
     }
     //printing of employees and their salaries
-    public static void listOfSalaries(){
+    private static void listOfSalaries(){
         for (HourlyEmployee employee : hourlyEmployees) {
             System.out.println("| name: "+employee.getName()+" || month salary: "+employee.getMonthSalary()+
                     " || year salary: "+employee.getYearSalary());
@@ -343,7 +343,7 @@ public class Company {
         }
     }
     //summ and aver salaries
-    public static void sumAndOver(){
+    private static void sumAndOver(){
         int quantity=hourlyEmployees.size()+salariedEmployees.size()+managerEmployees.size()+executiveEmployees.size();
         double mes=0;
         double ye=0;
@@ -366,7 +366,7 @@ public class Company {
         System.out.println("| Quantity of employees: "+quantity+" || summ month salary: "+mes+" || summ year salary: "+ye+" || average month salary: "+mes/quantity+" || average year salary: "+ye/quantity+" |");
     }
     //summ and aver salaries in a group
-    public static void sumAndOverGroup(){
+    private static void sumAndOverGroup(){
         Scanner in =new Scanner(System.in);
         System.out.println("input type of group: (1 - hourly, 2 - salaried, 3 - manager, 4 - executive)");
         int type = in.nextInt();

@@ -1,6 +1,6 @@
 package Module05;
 
-public class Executive extends Employee {
+class Executive extends Employee {
     private double oklad;
     private double monthProfit;
     private double yearProfit;
@@ -15,27 +15,25 @@ public class Executive extends Employee {
         this.persent=persent;
     }
 
-    public void setOklad(double oklad) {this.oklad = oklad;}
-    public void setMonthProfit(double monthSails) {this.monthProfit = monthSails;}
-    public void setYearProfit(double yearSails) {this.yearProfit = yearSails;}
-    public void setPersent(double persent) {this.persent = persent;}
-    public void setName(String name) {this.name = name;}
-    public double getOklad(){return oklad;}
-    public double getMonthProfit(){return monthProfit;}
-    public double getYearProfit(){return yearProfit;}
-    public double getPersent(){return persent;}
+    void setOklad(double oklad) {this.oklad = oklad;}
+    void setMonthProfit(double monthSails) {this.monthProfit = monthSails;}
+    void setYearProfit(double yearSails) {this.yearProfit = yearSails;}
+    void setPersent(double persent) {this.persent = persent;}
+    void setName(String name) {this.name = name;}
+    double getOklad(){return oklad;}
+    double getMonthProfit(){return monthProfit;}
+    double getYearProfit(){return yearProfit;}
+    double getPersent(){return persent;}
     @Override
-    public String getName(){
+    String getName(){
         return this.name;
     }
-
     @Override
-    public double getMonthSalary(){
+    double getMonthSalary(){
         return oklad+persent/100*monthProfit;
     }
-
     @Override
-    public double getYearSalary(){
+    double getYearSalary(){
         return 12*oklad+persent/100*yearProfit;
     }
 }

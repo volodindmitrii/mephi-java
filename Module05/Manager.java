@@ -1,8 +1,6 @@
 package Module05;
 
-public class Manager extends Employee {
-
-
+class Manager extends Employee {
     private double oklad;
     private double monthSails;
     private double yearSails;
@@ -16,15 +14,15 @@ public class Manager extends Employee {
         this.yearSails=yearSails;
         this.persent=persent;
     }
-    public void setOklad(double oklad) {this.oklad = oklad;}
-    public void setMonthSails(double monthSails) {this.monthSails = monthSails;}
-    public void setYearSails(double yearSails) {this.yearSails = yearSails;}
-    public void setPersent(double persent) {this.persent = persent;}
-    public void setName(String name) {this.name = name;}
-    public double getOklad(){return oklad;}
-    public double getMonthSails(){return monthSails;}
-    public double getYearSails(){return yearSails;}
-    public double getPersent(){return persent;}
+    void setOklad(double oklad) {this.oklad = oklad;}
+    void setMonthSails(double monthSails) {this.monthSails = monthSails;}
+    void setYearSails(double yearSails) {this.yearSails = yearSails;}
+    void setPersent(double persent) {this.persent = persent;}
+    void setName(String name) {this.name = name;}
+    double getOklad(){return oklad;}
+    double getMonthSails(){return monthSails;}
+    double getYearSails(){return yearSails;}
+    double getPersent(){return persent;}
     @Override
     public String getName(){return this.name;}
     @Override
