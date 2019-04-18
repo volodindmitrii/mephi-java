@@ -33,9 +33,9 @@ public class Company {
                     a = 0;
                     break;
                 case 1:
-                    additionEmpoyee();
+                    additionEmployee();
                     break;
-                case 2:
+                case :
                     System.out.println("input name of employee: ");
                     name = st.nextLine();
                     removeEmployee(name);
@@ -43,7 +43,7 @@ public class Company {
                 case 3:
                     System.out.println("input name of employee: ");
                     name = st.nextLine();
-                    chanchingOfParemethers(name);
+                    changeParameters(name);
                     break;
                 case 4:
                     System.out.println("input name of employee: ");
@@ -85,7 +85,7 @@ public class Company {
         }
 
     //addition
-    private static void additionEmpoyee(){
+    private static void additionEmployee(){
         String name;
         double month;
         double year;
@@ -137,7 +137,7 @@ public class Company {
                 break;
         }
     }
-    private static void additionEmpoyee(String name, int type){
+    private static void additionEmployee(String name, int type){
         double month;
         double year;
         double stavka;
@@ -228,10 +228,10 @@ public class Company {
     //moving
     private static void moveEmployee(String nname, int type){
         removeEmployee(nname);
-        additionEmpoyee(nname, type);
+        additionEmployee(nname, type);
         }
     //change settings
-    private static void chanchingOfParemethers(String nname){
+    private static void changeParameters(String nname){
         Scanner in = new Scanner(System.in);
         int a=0;
         int j=0;
@@ -308,38 +308,31 @@ public class Company {
     //printing of employees and their parameters
     private static void printEmployees(){
         for (HourlyEmployee employee : hourlyEmployees) {
-            System.out.println("| name: "+employee.getName()+" || otrabotano in month: "+employee.getOtrabotanoInMonth()+
-                    " || otrabotano in year: "+employee.getOtrabotanoInYear()+" || stavka: "+employee.getStavka()+" |");
+            System.out.println(employee.toString());
         }
         for (SalariedEmployee employee : salariedEmployees) {
-            System.out.println("| name: "+employee.getName()+" || salary: "+employee.getSalary()+" |");
+            System.out.println(employee.toString());
         }
         for (Manager employee : managerEmployees) {
-            System.out.println("| name: "+employee.getName()+" || oklad: "+employee.getOklad()+
-                    " || month sails: "+employee.getMonthSails()+" || year sails: "+employee.getYearSails()+" || persent: "+employee.getPersent()+" |");
+            System.out.println(employee.toString());
         }
         for (Executive employee : executiveEmployees) {
-            System.out.println("| name: "+employee.getName()+" || oklad: "+employee.getOklad()+
-                    " || month profit: "+employee.getMonthProfit()+" || year profit: "+employee.getYearProfit()+" || persent: "+employee.getPersent()+" |");
+            System.out.println(employee.toString());
         }
     }
     //printing of employees and their salaries
     private static void listOfSalaries(){
         for (HourlyEmployee employee : hourlyEmployees) {
-            System.out.println("| name: "+employee.getName()+" || month salary: "+employee.getMonthSalary()+
-                    " || year salary: "+employee.getYearSalary());
+            System.out.println(employee.printSalaries());
         }
         for (SalariedEmployee employee : salariedEmployees) {
-            System.out.println("| name: "+employee.getName()+" || month salary: "+employee.getMonthSalary()+
-                    " || year salary: "+employee.getYearSalary()+" |");
+            System.out.println(employee.printSalaries());
         }
         for (Manager employee : managerEmployees) {
-            System.out.println("| name: "+employee.getName()+" || month salary: "+employee.getMonthSalary()+
-                    " || year salary: "+employee.getYearSalary()+" |");
+            System.out.println(employee.printSalaries());
         }
         for (Executive employee : executiveEmployees) {
-            System.out.println("| name: "+employee.getName()+" || month salary: "+employee.getMonthSalary()+
-                    " || year salary: "+employee.getYearSalary()+" |");
+            System.out.println(employee.printSalaries());
         }
     }
     //summ and aver salaries
@@ -363,7 +356,8 @@ public class Company {
             mes+=employee.getMonthSalary();
             ye+=employee.getYearSalary();
         }
-        System.out.println("| Quantity of employees: "+quantity+" || summ month salary: "+mes+" || summ year salary: "+ye+" || average month salary: "+mes/quantity+" || average year salary: "+ye/quantity+" |");
+        System.out.println("| Quantity of employees: "+quantity+" || summ month salary: "+mes+" || summ year salary: "+
+                ye+" || average month salary: "+mes/quantity+" || average year salary: "+ye/quantity+" |");
     }
     //summ and aver salaries in a group
     private static void sumAndOverGroup(){
@@ -406,6 +400,7 @@ public class Company {
                 System.out.println("This group is not exist");
                 return;
         }
-        System.out.println("| Quantity of employees: "+quantity+" || summ month salary: "+mes+" || summ year salary: "+ye+" || average month salary: "+mes/quantity+" || average year salary: "+ye/quantity+" |");
+        System.out.println("| Quantity of employees: "+quantity+" || summ month salary: "+mes+" || summ year salary: "+
+                ye+" || average month salary: "+mes/quantity+" || average year salary: "+ye/quantity+" |");
     }
 }

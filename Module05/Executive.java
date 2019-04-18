@@ -5,10 +5,9 @@ class Executive extends Employee {
     private double monthProfit;
     private double yearProfit;
     private double persent;
-    private String name;
 
     Executive(String name, double oklad, double monthProfit, double yearProfit, double persent){
-        this.name=name;
+        super(name);
         this.oklad=oklad;
         this.monthProfit=monthProfit;
         this.yearProfit=yearProfit;
@@ -25,15 +24,16 @@ class Executive extends Employee {
     double getYearProfit(){return yearProfit;}
     double getPersent(){return persent;}
     @Override
-    String getName(){
-        return this.name;
-    }
-    @Override
     double getMonthSalary(){
         return oklad+persent/100*monthProfit;
     }
     @Override
     double getYearSalary(){
         return 12*oklad+persent/100*yearProfit;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + " || oklad: " + oklad +
+                " || month sails: " + monthProfit + " || year sails: " + yearProfit + " || persent: " + persent + " |";
     }
 }

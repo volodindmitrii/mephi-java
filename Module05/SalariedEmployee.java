@@ -2,21 +2,21 @@ package Module05;
 
 class SalariedEmployee extends Employee {
     private double salary;
-    private String name;
 
     SalariedEmployee(String name, double salary){
-        this.name=name;
+        super(name);
         this.salary=salary;
     }
 
     void setName(String name) {this.name = name;}
     void setSalary(double salary) {this.salary = salary;}
-    double getSalary(){return this.salary;}
-    @Override
-    String getName(){return this.name;}
+    double getSalary(){return salary;}
     @Override
     double getMonthSalary(){return salary;}
     @Override
     double getYearSalary(){return 12*salary;}
-
+    @Override
+    public String toString(){
+        return super.toString() + " || salary: " + salary + " |";
+    }
 }

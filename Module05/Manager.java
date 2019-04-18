@@ -5,10 +5,9 @@ class Manager extends Employee {
     private double monthSails;
     private double yearSails;
     private double persent;
-    private String name;
 
     Manager(String name, double oklad, double monthSails, double yearSails, double persent){
-        this.name=name;
+        super(name);
         this.oklad=oklad;
         this.monthSails=monthSails;
         this.yearSails=yearSails;
@@ -24,9 +23,12 @@ class Manager extends Employee {
     double getYearSails(){return yearSails;}
     double getPersent(){return persent;}
     @Override
-    public String getName(){return this.name;}
-    @Override
     public double getMonthSalary(){return oklad+persent/100*monthSails;}
     @Override
     public double getYearSalary(){return 12*oklad+persent/100*yearSails;}
+    @Override
+    public String toString() {
+        return super.toString() + " || oklad: " + oklad +
+                " || month sails: " + monthSails + " || year sails: " + yearSails + " || persent: " + persent + " |";
+    }
 }
