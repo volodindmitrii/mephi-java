@@ -35,7 +35,7 @@ public class Company {
                 case 1:
                     additionEmployee();
                     break;
-                case :
+                case 2:
                     System.out.println("input name of employee: ");
                     name = st.nextLine();
                     removeEmployee(name);
